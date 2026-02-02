@@ -1,38 +1,30 @@
 import math
 def divisor_finder(n):
-   j=0
-   i=1
-   divisor=[]
-   final_divisor=[]
-   while(i<=math.sqrt(n)):
-        if(n%i==0):
-            i=i+1
-            #j=j+1
-            divisor.append(i)
-        else:
-            i=i+1
-   for x in divisor:
-       if x not in final_divisor:
-           final_divisor.append(x)
-           j=j+1
-   return j
+    j = 0
+    i = 1
 
+    while i <= math.sqrt(n):
+        if n % i == 0:
+            j += 1
+        i += 1
 
+    if int(math.sqrt(n))**2 == n:
+        return j*2 - 1
+    else:
+        return j*2
 
-   #return (j*2)#
 
 number=1
-#while True:
-#    x=(number*(number+1))/2
-#    if(divisor_finder(x))>500:
-        #print(number)
-#        print(x)
-#        break
-#    else:
-#        number=number+1
+while True:
+    x=(number*(number+1))/2
+    if(divisor_finder(x))>500:
+        print(x)
+        break
+    else:
+        number=number+1
 
 
-print(divisor_finder(16))
+
 
 
 
